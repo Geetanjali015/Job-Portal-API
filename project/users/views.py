@@ -58,12 +58,7 @@ def login_user(request):
         user=authenticate(request,username=email,password=password)
         if user is not None and user.is_active:
             login(request,user)
-            if request.user.is_applicant:
-                return redirect('applicant-dashboard')
-            elif request.user.is_recruiter:
-                return redirect('recruiter-dashboard')
-            else:
-                return redirect('login')
+            return redirect('dashboard')
         else:
             messages.warning(request,'Something went wrong')
             return redirect('login')
