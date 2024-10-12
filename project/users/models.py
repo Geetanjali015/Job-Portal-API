@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     email=models.EmailField(unique=True)
     is_recruiter=models.BooleanField(default=False)
-    isapplicant=models.BooleanFeild(default=False)
+    isapplicant=models.BooleanField(default=False)
 
     has_resume=models.BooleanField(default=False)
     has_company=models.BooleanField(default=False)
