@@ -8,3 +8,4 @@ class Resume(models.Model):
     surname=models.CharField(max_length=100)
     location=models.CharField(max_length=100)
     job_title=models.CharField(max_length=100)
+    #insert cv
