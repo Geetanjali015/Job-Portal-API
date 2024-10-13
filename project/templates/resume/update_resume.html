@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+{%load widget_tweaks%}
+{% block element%}
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="cand mx-auto" style="width: 40rem">
+      <!--<img src="..." class="card-img-top" alt="...">-->
+      <div class="card-body">
+        <h5 class="card-title mb-3">Create A Resume</h5>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">First Name</label>
+                {%render_field form.first_name class="form-control"%}
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Surname</label>
+                {%render_field form.surname class="form-control"%}
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Location</label>
+                {%render_field form.location class="form-control"%}
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Job title</label>
+                {%render_field form.job_title class="form-control"%}
+            </div>
+
+    
+         
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+       
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock content%}

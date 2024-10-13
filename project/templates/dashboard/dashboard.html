@@ -6,7 +6,7 @@
 {% if not request.user.has_company%}
 
 <div class="alert alert-danger" role="alert">
-    <b>You are seeing this because you have not created any resume. Create one from<a href="#">here</a></b>
+    <b>You are seeing this because you have not created any resume. Create one from<a href="{%url 'update-resume'%}">here</a></b>
 </div>
 {%endif%} 
 
