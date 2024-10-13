@@ -3,6 +3,12 @@
 {% block content %}
 
 {% if request.user.is_applicant %}
+{% if not request.user.has_company%}
+
+<div class="alert alert-danger" role="alert">
+    <b>You are seeing this because you have not created any resume. Create one from<a href="#">here</a></b>
+</div>
+{%endif%} 
 
 <section>
     <div class="p-5 mb-4 bg-light rounded-3">
