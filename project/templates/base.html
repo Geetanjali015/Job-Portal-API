@@ -1,7 +1,66 @@
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFY1zcLA8N1+NtUVF0sA7MsXsP1UyJoMp4YLEUNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm/23ujFRVhIN4Y3M7zRk3kwFfg3Da1jSTs/p8yZEFNhpBLGz" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <section>
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Welcome to the Dashboard</h5>
+                            <p class="card-text">This is your personal dashboard where you can access different actions.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="dropdown mt-3">
+                        <a
+                          class="btn btn-primary dropdown-toggle"
+                          href="#"
+                          role="button"
+                          id="navbarDropdown"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <ul class="nav mt-4">
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-primary mt-3">Logout</a>
+                </div>
+            </div>
+        </section>
+    </div>
 
+    <div class="container mt-5">
+        <!-- Content block to be inserted dynamically in your template -->
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2024 Company Name. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFY1zcLA8N1+NtUVF0sA7MsXsP1UyJoMp4YLEUNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
