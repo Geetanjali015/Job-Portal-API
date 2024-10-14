@@ -1,0 +1,135 @@
+{%extends 'base.html'%} {% block content%}
+<section>
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h2 class="display-5 fw-bold">Django Jobs. Get Hired Quickly!</h2>
+      <br />
+      <div class="card">
+        <div class="card-body">
+          <form class="row gy-2 gx-3 align-items-center">
+            <div class="col-sm-2">
+              <label class="visually-hidden" for="autoSizingInput">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="autoSizingInput"
+                placeholder="Job Keyword"
+              />
+            </div>
+            <div class="col-sm-3">
+              <label class="visually-hidden" for="autoSizingSelect"
+                >Select Location</label
+              >
+              <select class="form-select" id="autoSizingSelect">
+                <option selected>Select Location</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <label class="visually-hidden" for="autoSizingSelect"
+                >Choose Job Type</label
+              >
+              <select class="form-select" id="autoSizingSelect">
+                <option selected>Choose Job Type</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <label class="visually-hidden" for="autoSizingSelect"
+                >Select Industry</label
+              >
+              <select class="form-select" id="autoSizingSelect">
+                <option selected>Select Industry</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <p class="col-md-8 fs-6 mt-3">
+        Welcome to Django Job Portal! Search and get your dream job. We have
+        thousands of job offerings for you. Don't forget to leave a like when
+        you get a job. Goodluck with you job hunt!
+      </p>
+      <button class="btn btn-outline-primary" type="button">More Jobs</button>
+    </div>
+  </div>
+</section>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in
+          to additional content. This content is a little bit longer.
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This card has supporting text below as a natural lead-in to additional
+          content.
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        I
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This card has even longer content than the
+            first to show that equal height action.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-md-10 mx-auto col-lg-2 mt-4">
+        <nav aria-label="...">
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
+                >Previous</a
+              >
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>  
+
+{% endblock content%}
+
