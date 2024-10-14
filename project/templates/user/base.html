@@ -24,39 +24,46 @@
             Welcome to Django Job Portal
           </h1>
           <p class="col-lg-10 fs-4">
-            Find the job you need that is tailored to your experience, expertise
-            and skill sets. There's plenty of jobs to go round for everyone.
-            Goodluck with hunt!
+            Find the job you need that is tailored to your experience, expertise,
+            and skill sets. There are plenty of jobs to go around for everyone.
+            Good luck with the hunt!
           </p>
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
           {% if messages %}
             {% for message in messages %}
-              <div class="alert alert-{{ message.tags }}" role="alert">
+              <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
                 <b>{{ message }}</b>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
             {% endfor %}
           {% endif %}
 
-          <form method="post">
+          <form method="post" class="p-4 p-md-5 border rounded-3 bg-light">
             {% csrf_token %}
             <div class="mb-3">
               <label for="username" class="form-label">Username:</label>
-              <input type="text" class="form-control" id="username" name="username">
+              <input type="text" class="form-control" id="username" name="username" required>
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Password:</label>
-              <input type="password" class="form-control" id="password" name="password">
+              <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="w-100 btn btn-lg btn-primary">Login</button>
           </form>
         </div>
       </div>
     </div>
 
+    <!-- Bootstrap JS and Popper.js -->
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFY1zcLA8N1+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz4fnFO9gybBogGz1U1K5kVo9rvzP6xs1rP6EbxrK6U6E5rG5t5Ka5dd0y"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-pzjw8f+ua7Kw1TIqK5s7z6yVb12pgbt/11zBwwAHEl5Ss8jHgtL8fZ7ErmFJ6vFl"
       crossorigin="anonymous"
     ></script>
   </body>
