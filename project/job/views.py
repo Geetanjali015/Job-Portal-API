@@ -4,29 +4,36 @@ from django.contrib import messages
 from .models import Job
 from .form import CreateJobForm
 from .form import UpdateJobForm
-
+from django.contrib.auth.decorators import login_required
 #create a job
+@login_required
 def create_job(request):
-    if request.user.is_recruiter and request.user.has_company:
-        if request.method=='POST':
-            form=CreateJobForm(request.POST)
-            if form.is_valid():
-                var=form.save(commit=False)
-                var.user=request.user
-                var.company=request.user.company
-                var.save()
-                messages.info(request,'New job has been created')
-                return redirect('dashboard')
+    # Check if the user is authenticated and has the necessary attributes
+    if request.user.is_authenticated and hasattr(request.user, 'is_recruiter') and request.user.is_recruiter:
+        if hasattr(request.user, 'has_company') and request.user.has_company:
+            if request.method == 'POST':
+                form = CreateJobForm(request.POST)
+                if form.is_valid():
+                    var = form.save(commit=False)
+                    var.user = request.user
+                    var.company = request.user.company
+                    var.save()
+                    messages.info(request, 'New job has been created')
+                    return redirect('dashboard')
+                else:
+                    messages.warning(request, 'Something went wrong')
+                    return redirect('create-job')
             else:
-                messages.warning(request,'Something went wrong')
-                return redirect('create-job')
+                form = CreateJobForm()
+                context = {'form': form}
+                return render(request, 'job/create_job.html', context)
         else:
-            form=CreateJobForm()
-            context={'form':form}
-            return render(request,'job/create_job.html',context)
+            messages.warning(request, 'You need to have a company to create a job.')
+            return redirect('dashboard')
     else:
-        messages.warning(request,'Permission denied')
-        return redirect('dashboard')    
+        messages.warning(request, 'Permission denied. Only recruiters can create jobs.')
+        return redirect('dashboard')
+   
 
 #update job
 def update_job(request,pk):

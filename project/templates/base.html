@@ -63,7 +63,7 @@
 
                     {% if request.user.has_company%}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Create job ads</a>
+                        <a class="nav-link" href="{%url 'create-job'%}">Create job ads</a>
                     </li>
                     {% else%}
                     <li class="nav-item">
