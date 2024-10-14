@@ -1,6 +1,31 @@
-{% extends 'base.html' %}
-{%block content%}
+{% extends 'base.html' %} {% block content %}
+<section>
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h2 class="display-5 fw-bold">Django Jobs. Get Hired Quickly!</h2>
+      <p class="col-md-8 fs-5 mt-3">All Available Jobs</p>
+    </div>
+  </div>
+</section>
 
-
-
-{% endblock content%}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+   {% if jobs%}
+   {% for job in jobs%} 
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">{{job.title}}</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in
+          to additional content. This content is a little bit longer.
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+  {%endif%}
+</div>
+{% endblock %}
