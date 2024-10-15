@@ -50,3 +50,8 @@ def update_job(request,pk):
         form=UpdateJobForm(instance=job)
         context={'form':form}
         return render(request,'job/update_job.html',context)
+    
+def manage_jobs(request):
+    jobs=Job.objects.filter(user=request.user,company=request.user.company)
+    context={'jobs':jobs}
+    return render(request,'job/manage_jobs.html',context)

@@ -18,7 +18,8 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{%url 'dashboard'%}">Django Job Portal</a>
+            
+            <a class="navbar-brand" href="{%url 'home'%}">Django Job Portal</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -53,6 +54,7 @@
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
+                <a href="{% url 'logout' %}" class="btn btn-warning btn-sm">Logout</a>
 
                 {%elif request.user.is_recruiter%}
 
@@ -63,13 +65,17 @@
 
                     {% if request.user.has_company%}
                     <li class="nav-item">
-                        <a class="nav-link" href="{%url 'create-job'%}">Create job ads</a>
+                        <a class="nav-link" href="{% url 'create-job' %}">Create job ads</a>
                     </li>
-                    {% else%}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'update-company'%}">Create Company</a>
+                        <a class="nav-link" href="{% url 'manage-jobs' %}">Manage Jobs</a>
                     </li>
-                    {%endif%}
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'update-company' %}">Create Company</a>
+                    </li>
+                    {% endif %}
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
@@ -85,9 +91,23 @@
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
+                <a href="{% url 'logout' %}" class="btn btn-warning btn-sm">Logout</a>
+
                 {%endif%}
+                {%else%}
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'job-listing'%}">All Jobs</a>
+                    </li>
+    
+                    
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+
+                <a href="{% url 'login' %}" class="btn btn-warning btn-sm">Login</a>
                 {%endif%}
-                <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
             </div>
         </div>
     </nav>

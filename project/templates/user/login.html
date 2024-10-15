@@ -15,7 +15,9 @@
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
     <hr class="my-4">
     <!-- <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small> -->
-    <small class="text-muted">Don't have an account? <a href="#">Sign Up</a></small>
-</form>
+    <small class="text-muted">Register as an applicant<a href="{%url 'register-applicant'%}">Sign Up</a></small><br>
+    <small class="text-muted">Register as an recruiter<a href="{%url 'register-recruiter'%}">Sign Up</a></small>
+
+  </form>
   
 {% endblock content %}
