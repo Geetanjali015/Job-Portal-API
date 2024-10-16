@@ -8,8 +8,12 @@
 <h2 class="display-5 fw-bold">{{job.title}}</h2>
 <p class="col-md-8 fs-5 mt-3">
 </p>
+{% if has_applied==False %}
 {{job.location}} | Remote | Rps{{job.salary|intcomma}}
-<button class="btn btn-primary btn-lg" type="button">Apply Now</button>
+<a href="{% url 'apply-to-job'job.pk%}" class="btn btn-primary btn-lg" >Apply Now</a>
+{%else%}
+<p><sapn class="text-danger">You have already applied for this job</span></p>
+{%endif%}
 </div>
 </div>
 </section>

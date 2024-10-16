@@ -32,7 +32,7 @@
                     </li>
                     {% if request.user.has_resume%}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Apply to jobs</a>
+                        <a class="nav-link" href="{% url 'job listing'%}">Apply to jobs</a>
                     </li>
                     {%else%}
                     <li class="nav-item">
