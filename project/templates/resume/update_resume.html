@@ -9,7 +9,7 @@
       <!--<img src="..." class="card-img-top" alt="...">-->
       <div class="card-body">
         <h5 class="card-title mb-3">Create A Resume</h5>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">First Name</label>
@@ -29,6 +29,11 @@
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Job title</label>
                 {%render_field form.job_title class="form-control"%}
+            </div>
+            
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Upload Resume</label>
+              {%render_field form.upload_resume class="form-control"%}
             </div>
 
     
