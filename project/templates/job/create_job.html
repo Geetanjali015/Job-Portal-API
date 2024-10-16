@@ -22,10 +22,22 @@
             </div>
 
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Location</label>
-                {%render_field form.location class="form-control"%}
+                <label for="exampleInputEmail1" class="form-label">City</label>
+                {%render_field form.city class="form-control"%}
             </div>
 
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">State</label>
+              {%render_field form.state class="form-control"%}
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Industry</label>
+              {%render_field form.industry class="form-control"%}
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Job type</label>
+              {%render_field form.job_type class="form-control"%}
+            </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Job Requirements</label>
                 {%render_field form.requirements|attr:"rows:2" class="form-control"%}
