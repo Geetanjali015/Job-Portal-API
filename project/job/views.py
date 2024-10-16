@@ -82,3 +82,8 @@ def all_applicants(request,pk):
     applicants = job.applyjob_set.all()
     context={'job':job,'applicants':applicants}
     return render(request,'job/all_applicants.html',context)
+
+def applied_jobs(request):
+    jobs=ApplyJob.objects.filter(user=request.user)
+    context={'jobs':jobs}
+    return render(request,'job/applied_job.html',context)

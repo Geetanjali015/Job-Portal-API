@@ -34,24 +34,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'job listing'%}">Apply to jobs</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'applied-jobs'%}">Manage Job Applicantions</a>
+                    </li>
                     {%else%}
                     <li class="nav-item">
                         <a class="nav-link" href="{%url 'update-resume'%}">Create resume</a>
                     </li>
                     {%endif%}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{request.user.email}}</a>
                     </li>
                 </ul>
                 <a href="{% url 'logout' %}" class="btn btn-warning btn-sm">Logout</a>
@@ -76,19 +69,9 @@
                     </li>
                     {% endif %}
                     
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+                   
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{request.user.email}}</a>
                     </li>
                 </ul>
                 <a href="{% url 'logout' %}" class="btn btn-warning btn-sm">Logout</a>

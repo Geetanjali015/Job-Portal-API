@@ -17,7 +17,7 @@
     <div class="card h-100">
       <div class="card-body">
         <h5 class="card-title">{{job.title}}</h5>
-        <p class="card-text">Job location: {{job.location}}</p>
+        <p class="card-text">Job location: {{job.city}},{{job.state}}</p>
         <p class="card-text">{{job.salary|intcomma}}</p>
         <p class="card-text">Posted By: {{job.company}}</p>
         <a class="btn btn-primary btn-sm" href="{%url 'job-details' job.pk%}">View Details</a>
@@ -32,4 +32,5 @@
   {%endfor%}
   {%endif%}
 </div>
+<br>
 {% endblock %}

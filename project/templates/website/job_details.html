@@ -9,7 +9,7 @@
 <p class="col-md-8 fs-5 mt-3">
 </p>
 {% if has_applied==False %}
-{{job.location}} | Remote | Rps{{job.salary|intcomma}}
+{{job.state}} | Remote | Rps{{job.salary|intcomma}}
 <a href="{% url 'apply-to-job'job.pk%}" class="btn btn-primary btn-lg" >Apply Now</a>
 {%else%}
 <p><sapn class="text-danger">You have already applied for this job</span></p>
