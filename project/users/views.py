@@ -25,7 +25,7 @@ def register_applicant(request):
     else:
         form=RegisterUserForm()
         context={'form':form}
-        return render(request, 'user/register_applicant.html',context)
+        return render(request, 'users/register_applicant.html',context)
 
 # register recruiter only.
 def register_recruiter(request):
