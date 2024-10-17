@@ -79,10 +79,19 @@ python -m venv venv
 
 - Recruiters can post jobs from their dashboard, and candidates can search and apply for jobs.
 
-
+ 
 ## Technologies Used
 
 - Bootstrap for the responsive design.
 - Django for the web framework.
 - SQLite for the database.
+
+  ![image](https://github.com/user-attachments/assets/d5771db1-b592-4343-a5e2-0b401da4c80b) <br>
+  ![image](https://github.com/user-attachments/assets/28c1aa79-8b50-4d36-8a75-a97bdd451ab0)<br>
+  ![image](https://github.com/user-attachments/assets/a65e29a3-3556-4806-a156-e43ca83640a1)<br>
+  ![image](https://github.com/user-attachments/assets/6a1a76f6-7ff1-484e-b302-7158568426fc)<br>
+  
+
+  
+
 
